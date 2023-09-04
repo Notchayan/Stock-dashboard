@@ -22,7 +22,7 @@ class GraphCard extends Component {
 
     const chartOptions = {
       responsive: true,
-      maintainAspectRatio: false, // Ensure the chart resizes correctly
+      maintainAspectRatio: false, 
       plugins: {
         tooltip: {
           enabled: true,
@@ -34,7 +34,7 @@ class GraphCard extends Component {
           display: false,
           grid: {
             display: true,
-            color: 'rgba(0, 0, 0, 0.1)', // Light grid lines
+            color: 'rgba(0, 0, 0, 0.1)', 
           },
         },
         y: {
@@ -42,7 +42,7 @@ class GraphCard extends Component {
           stepSize: 5,
           grid: {
             display: true,
-            color: 'rgba(0, 0, 0, 0.1)', // Light grid lines
+            color: 'rgba(0, 0, 0, 0.1)', 
           },
         },
       },
@@ -68,48 +68,39 @@ class GraphCard extends Component {
             data: graphData.y_axis,
             backgroundColor: 'rgba(0, 0, 0, 0)',
             borderColor: lowOrHighColor,
-            borderWidth: 2, // Increase line thickness
+            borderWidth: 2, 
           },
         ],
       },
       options: chartOptions,
     });
 
-    // Add interactivity: Update chart when the cursor enters or leaves the chart area
+   
     this.chartRef.current.addEventListener('mouseenter', this.handleMouseEnter);
     this.chartRef.current.addEventListener('mouseleave', this.handleMouseLeave);
   }
 
   updateChart() {
     const { graphData } = this.props;
-    // Update chart data and re-render
     this.chartInstance.data.labels = graphData.x_axis;
     this.chartInstance.data.datasets[0].data = graphData.y_axis;
     this.chartInstance.update();
   }
 
   handleMouseEnter = () => {
-    // Handle chart hover effects here
     if (this.chartInstance) {
       const dataset = this.chartInstance.data.datasets[0];
-      // Change the border color to a brighter color on hover
       dataset.borderColor = 'rgba(255, 99, 132, 1)';
-      // Increase the line thickness on hover
       dataset.borderWidth = 3;
-      // Redraw the chart with animation to reflect the changes
       this.chartInstance.update({ duration: 200, easing: 'linear' });
     }
   };
 
   handleMouseLeave = () => {
-    // Reset chart hover effects here
     if (this.chartInstance) {
       const dataset = this.chartInstance.data.datasets[0];
-      // Reset border color to the original color
       dataset.borderColor = 'rgba(129, 183, 55, 1)';
-      // Reset line thickness to the original value
       dataset.borderWidth = 2;
-      // Redraw the chart with animation to reflect the changes
       this.chartInstance.update({ duration: 200, easing: 'linear' });
     }
   };
