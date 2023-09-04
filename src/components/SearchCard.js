@@ -93,7 +93,7 @@ class SearchCard extends Component {
       this.setState((prevState) => ({
         search_stockArray: [...prevState.search_stockArray, stockValue],
         loading_api: false,
-        inputValue: '', // Clear input field
+        inputValue: '', 
       }));
     } catch (error) {
       console.error('API error:', error);
