@@ -6,20 +6,20 @@ const Navbar = () => {
     top: '0',
     left: '0',
     right: '0',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
     color: '#fff',
     padding: '10px 20px',
     zIndex: '1000',
     display: 'flex',
-    justifyContent: 'space-between', // Align content at both ends
-    alignItems: 'center', // Vertically center content
-    backdropFilter: 'blur(5px)', // Apply a blur effect to the background (requires CSS backdrop-filter support)
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    backdropFilter: 'blur(5px)', 
   };
 
   const logoStyle = {
-    fontSize: '24px', // Adjust font size
-    fontWeight: 'bold', // Make the text bold
-    marginLeft: '20px', // Add some left margin
+    fontSize: '24px', 
+    fontWeight: 'bold', 
+    marginLeft: '20px', 
   };
 
   return (
@@ -27,7 +27,6 @@ const Navbar = () => {
       <div className="navbar-brand" style={logoStyle}>
         Your Logo
       </div>
-      {/* You can add additional elements on the right side if needed */}
     </nav>
   );
 };
