@@ -4,7 +4,7 @@ import FilterCard from './FilterCard';
 import TableDataCard from './TableDataCard';
 import GraphCard from './GraphCard';
 import '../css/styles.css';
-// import Navbar from './Navbar';
+
 
 
 class App extends React.Component {
