@@ -1,0 +1,54 @@
+/* Improved Filter Card CSS */
+.filter.card-container {
+    padding: 10px;
+    font-size: 13px;
+    height: auto; /* Adjust the height as needed */
+    transition: background-color 0.3s, transform 0.3s;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #222;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Add relative positioning */
+    z-index: 2; /* Set a higher z-index to keep it above other elements */
+  }
+  
+  .filter.card-container .card-body {
+    padding: 10px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row; /* Display elements horizontally */
+    justify-content: space-between;
+    align-items: center; /* Vertically center items */
+  }
+  
+  /* Filter options (example styles; customize as needed) */
+  .filter-option {
+    flex: 1; /* Distribute available space equally among options */
+    margin-right: 10px; /* Add spacing between options */
+    padding: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .filter-option:last-child {
+    margin-right: 0; /* Remove margin for the last option */
+  }
+  
+  /* Hover Effects */
+  .filter-option:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 991px) {
+    .filter.card-container {
+      margin-bottom: 20px;
+      min-height: 160px;
+    }
+  }
+  

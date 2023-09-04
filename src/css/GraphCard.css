@@ -1,0 +1,101 @@
+/* Centered message for no graph data */
+.no-graph-data-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 16px; /* Increased font size for better readability */
+    text-align: center;
+    color: #666; /* Dark gray text color */
+}
+
+/* Adjusted card-body for better positioning */
+.graph.card-container .card-body {
+    position: relative;
+    padding: 15px; /* Added padding for better spacing */
+}
+
+/* Chart canvas styles */
+canvas.myChart {
+    max-height: 325px;
+    width: 100%; /* Ensure the canvas takes full width */
+    transition: max-height 0.3s; /* Add smooth transition */
+}
+
+/* Main chart container */
+.main__chart {
+    pointer-events: none;
+    margin-top: 20px; /* Slightly increased top margin */
+    position: relative;
+}
+
+/* Top section of the main chart */
+.main__chart-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+/* Select input styles */
+.main__chart-select {
+    width: 200px;
+    height: 30px;
+    font-size: 14px; /* Increased font size for better readability */
+    position: absolute;
+    right: 20px;
+    transition: width 0.3s; /* Add smooth width transition */
+    background-color: #f5f5f5; /* Light gray background color */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px;
+    padding: 5px 10px; /* Adjusted padding for better appearance */
+    color: #333; /* Dark gray text color */
+}
+
+/* Block and none display classes */
+.ds-block {
+    display: block;
+    pointer-events: none;
+}
+
+.ds-none {
+    display: none;
+    pointer-events: none;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 991px) {
+    /* Adjust canvas max-height and reset min-height */
+    canvas.myChart {
+        max-height: none;
+        min-height: unset;
+    }
+
+    /* Margin-top for main chart container */
+    .main__chart {
+        margin-top: 15px;
+    }
+
+    /* Responsive width and positioning for select input */
+    .main__chart-select {
+        position: relative;
+        right: 0;
+        width: 100%;
+        transition: width 0.3s;
+    }
+
+    /* Reset position and transform for messages */
+    .no-graph-data-message,
+    .no-data-message {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        text-align: center;
+        font-size: 16px; /* Increased font size for better readability */
+        color: #666; /* Dark gray text color */
+    }
+}
